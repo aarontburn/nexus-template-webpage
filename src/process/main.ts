@@ -1,4 +1,5 @@
-import { Process, Setting } from "@nexus/nexus-module-builder"
+import { Process } from "@nexus/nexus-module-builder"
+import { session } from "electron";
 
 // These is replaced to the ID specified in export-config.js during export. DO NOT MODIFY.
 const MODULE_ID: string = "{EXPORTED_MODULE_ID}";
@@ -13,24 +14,14 @@ export default class SampleProcess extends Process {
      *      and should not contain logic relevant to the renderer.
      */
     public constructor() {
-        super(MODULE_ID, MODULE_NAME, new URL("https://www.google.com/"));
+        super(MODULE_ID, MODULE_NAME, new URL("https://github.com/aarontburn/nexus-core/blob/main/docs/getting_started/Introduction.md"));
     }
 
-    /**
-     *  The entry point of the module.
-     */
-    public initialize(): void {
-        super.initialize(); // This should be called.
-        console.log(MODULE_ID + " initialized.");
+    public beforeWindowCreated(): void {
+        const userAgent: string = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36";
+        console.log(`${MODULE_NAME}: Setting user agent to: ${userAgent}`);
+        session.defaultSession.setUserAgent(userAgent);
     }
 
-
-    public registerSettings(): (Setting<unknown> | string)[] {
-        return [];
-    }
-
-
-    public refreshSettings(modifiedSetting: Setting<unknown>): void {
-    }
 
 }

@@ -1,7 +1,7 @@
 {
-  "name": "nexus-template-internal",
+  "name": "nexus-template-website",
   "version": "1.0.0",
-  "description": "A developer template to create a internal, no-gui module for Nexus.",
+  "description": "A developer template to embed existing websites into Nexus.",
   "author": "aarontburn",
   "scripts": {
     "start": "npm run dev_export && electron ./node_modules/@nexus/nexus-client/main.js --dev",
@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@types/yauzl-promise": "^4.0.1",
-    "electron": "^28.0.0",
+    "electron": "^35.1.5",
     "typescript": "^4.8.3",
     "yauzl-promise": "^4.0.0"
   }
