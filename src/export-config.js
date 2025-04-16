@@ -1,5 +1,5 @@
 module.exports = {
-    excluded: [],
+    excluded: ["electron.ts"],
     included: [],
     build: {
         name: "Sample Web Browser Module",

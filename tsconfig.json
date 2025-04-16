@@ -13,7 +13,8 @@
     }
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "./node_modules/@nexus/nexus-client/renderer.d.ts"
 
   ]
 }

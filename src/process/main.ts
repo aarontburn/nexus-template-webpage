@@ -8,19 +8,26 @@ const MODULE_NAME: string = "{EXPORTED_MODULE_NAME}";
 
 export default class SampleProcess extends Process {
 
-
     /**
      *  The constructor. Should not directly be called, 
      *      and should not contain logic relevant to the renderer.
      */
     public constructor() {
-        super(MODULE_ID, MODULE_NAME, new URL("https://github.com/aarontburn/nexus-core/blob/main/docs/getting_started/Introduction.md"));
+        super({
+			moduleID: MODULE_ID,
+			moduleName: MODULE_NAME,
+			paths: {
+				urlPath: "https://github.com/aarontburn/nexus-core/blob/main/docs/getting_started/Introduction.md#Nexus"
+			},
+            httpOptions: {
+                userAgent: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.179 Safari/537.36`,
+                partition: `persist:${MODULE_ID}`
+            }
+		});
     }
 
     public beforeWindowCreated(): void {
-        const userAgent: string = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36";
-        console.log(`${MODULE_NAME}: Setting user agent to: ${userAgent}`);
-        session.defaultSession.setUserAgent(userAgent);
+
     }
 
 
