@@ -14,21 +14,16 @@ export default class SampleProcess extends Process {
      */
     public constructor() {
         super({
-			moduleID: MODULE_ID,
-			moduleName: MODULE_NAME,
-			paths: {
-				urlPath: "https://github.com/aarontburn/nexus-core/blob/main/docs/getting_started/Introduction.md#Nexus"
-			},
+            moduleID: MODULE_ID,
+            moduleName: MODULE_NAME,
+            paths: {
+                urlPath: "https://github.com/aarontburn/nexus-core/blob/main/docs/getting_started/Introduction.md#Nexus"
+            },
             httpOptions: {
-                userAgent: `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.179 Safari/537.36`,
+                userAgent: session.fromPartition(`persist:${MODULE_ID}`).getUserAgent().replace(/Electron\/*/, ''),
                 partition: `persist:${MODULE_ID}`
             }
-		});
+        });
     }
-
-    public beforeWindowCreated(): void {
-
-    }
-
 
 }
