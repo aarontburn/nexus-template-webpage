@@ -1,4 +1,4 @@
-import { Process } from "@nexus/nexus-module-builder"
+import { Process } from "@nexus-app/nexus-module-builder"
 import { session } from "electron";
 
 // These is replaced to the ID specified in export-config.js during export. DO NOT MODIFY.
