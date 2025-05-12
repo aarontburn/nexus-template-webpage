@@ -1,6 +1,6 @@
 // Sends information to the the process.
 const sendToProcess = (eventType: string, ...data: any[]): Promise<void> => {
-    return window.parent.ipc.send(window, eventType, data);
+    return window.ipc.sendToProcess(eventType, data);
 }
 
 const url: string = "https://github.com/aarontburn/nexus-core/blob/main/docs/getting_started/Introduction.md#Nexus";
@@ -31,7 +31,7 @@ const handleEvent = (eventType: string, data: any[]) => {
 }
 
 // Attach event handler.
-window.parent.ipc.on(window, (eventType: string, data: any[]) => {
+window.ipc.onProcessEvent((eventType: string, data: any[]) => {
     handleEvent(eventType, data);
 });
 

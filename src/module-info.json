@@ -4,10 +4,10 @@
     "author": "developer",
     "version": "1.0.0",
     "description": "A developer template to embed websites within Nexus.",
-    "build-version": 1,
     "platforms": [],
     "link": "https://github.com/aarontburn/nexus-template-webpage",
     "build": {
+        "build-version": 1,
         "excluded": [
             "electron.ts"
         ],
