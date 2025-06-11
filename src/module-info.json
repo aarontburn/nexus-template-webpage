@@ -4,7 +4,7 @@
     "author": "developer",
     "version": "1.0.0",
     "description": "A developer template to embed websites within Nexus.",
-    "platforms": [],
+    "platforms": ["win32", "linux", "darwin"],
     "link": "https://github.com/aarontburn/nexus-template-webpage",
     "build": {
         "build-version": 1,
